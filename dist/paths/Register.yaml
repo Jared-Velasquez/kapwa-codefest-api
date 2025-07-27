@@ -3,7 +3,7 @@ post:
   operationId: "RegisterUserForHackathon"
   responses:
     "200":
-      description: "User successfully registered for Kapwa Codefest"
+      description: "User successfully registered for Kapwa Codefest. User will receive an email confirming their registration."
       content:
         application/json:
           schema:

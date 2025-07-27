@@ -20,3 +20,19 @@ components:
       $ref: 'schemas/Info.yaml'
     Error:
       $ref: 'schemas/Error.yaml'
+  securitySchemes:
+    CognitoOAuth:
+      type: oauth2
+      flows:
+        authorizationCode: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/login
+        tokenUrl: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/oauth2/token
+        scopes:
+          email: "Access user's email address"
+          openid: "Access user's OpenID Connect information"
+          profile: "Access user's profile information"
+
+security:
+  - CognitoOAuth:
+    - email
+    - openid
+    - profile

@@ -1,0 +1,34 @@
+post:
+  summary: "Register the authenticated user for Kapwa Codefest"
+  operationId: "RegisterUserForHackathon"
+  responses:
+    "200":
+      description: "User successfully registered for Kapwa Codefest"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Info.yaml'
+    "400":
+      description: "User is already registered or provided invalid data"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "401":
+      description: "User is not authenticated"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "404":
+      description: "User not found"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "500":
+      description: "Internal server error"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'

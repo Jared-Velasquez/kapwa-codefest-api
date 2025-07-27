@@ -1,0 +1,90 @@
+get:
+  summary: "Get a user by ID"
+  operationId: "GetUserById"
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    "200":
+      description: "The user corresponding to the provided user ID"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/User.yaml'
+    "401":
+      description: "User is not authenticated"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "403":
+      description: "User does not have permission to access this resource"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "404":
+      description: "User not found"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "500":
+      description: "Internal server error"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+patch:
+  summary: "Update a user's information"
+  operationId: "PatchUser"
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/PatchUser.yaml'
+  responses:
+    "204":
+      description: "User information updated successfully"
+    "400":
+      description: "Invalid input data"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "401":
+      description: "User is not authenticated"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "403":
+      description: "User does not have permission to update this resource"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "404":
+      description: "User not found"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'
+    "500":
+      description: "Internal server error"
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Error.yaml'

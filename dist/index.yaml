@@ -16,3 +16,7 @@ components:
       $ref: 'schemas/User.yaml'
     PatchUser:
       $ref: 'schemas/PatchUser.yaml'
+    Info:
+      $ref: 'schemas/Info.yaml'
+    Error:
+      $ref: 'schemas/Error.yaml'

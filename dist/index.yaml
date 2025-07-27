@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  version: 0.1.0
+  title: Kapwa Codefest Website API
+  description: API for the Kapwa Codefest website
+
+paths:
+  /users/{user_id}:
+    $ref: 'paths/User.yaml'
+  /users/register:
+    $ref: 'paths/Register.yaml'
+
+components:
+  schemas:
+    User:
+      $ref: 'schemas/User.yaml'
+    PatchUser:
+      $ref: 'schemas/PatchUser.yaml'

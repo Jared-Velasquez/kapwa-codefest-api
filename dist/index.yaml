@@ -24,12 +24,13 @@ components:
     CognitoOAuth:
       type: oauth2
       flows:
-        authorizationCode: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/login
-        tokenUrl: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/oauth2/token
-        scopes:
-          email: "Access user's email address"
-          openid: "Access user's OpenID Connect information"
-          profile: "Access user's profile information"
+        authorizationCode: 
+          authorizationUrl: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/login?client_id=35l46r028b1qtg145u1ai7olej&response_type=code&scope=email+openid+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback
+          tokenUrl: https://kapwa-codefest.auth.us-west-1.amazoncognito.com/oauth2/token
+          scopes:
+            email: "Access user's email address"
+            openid: "Access user's OpenID Connect information"
+            profile: "Access user's profile information"
 
 security:
   - CognitoOAuth:

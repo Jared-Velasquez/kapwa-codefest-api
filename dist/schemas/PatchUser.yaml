@@ -1,0 +1,15 @@
+type: object
+properties:
+  first_name:
+    type: string
+    description: "First name of the user"
+  last_name:
+    type: string
+    description: "Last name of the user"
+  school:
+    type: string
+    description: "School the user is associated with"
+  linkedin:
+    type: string
+    format: uri
+    description: "LinkedIn profile URL of the user"
